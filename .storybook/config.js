@@ -9,6 +9,8 @@ setOptions({
   sortStoriesByKind: true,
   addonPanelInRight: true,
   selectedAddonPanel: 'storybooks/storybook-addon-knobs',
+  hierarchySeparator: /\//,
+  hierarchyRootSeparator: /\|/,
 });
 
 // Global decorators

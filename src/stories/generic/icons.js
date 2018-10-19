@@ -28,6 +28,9 @@ const selectedIconSet = iconSets[Math.floor(Math.random() * iconSets.length)];
 const selectedIconSetIcons = availableIcons[selectedIconSet].icons;
 const selectedIcon = selectedIconSetIcons[Math.floor(Math.random() * selectedIconSetIcons.length)];
 
+// Generate random hex color
+const color = `#${Math.floor(Math.random() * 16777215).toString(16)}`;
+
 // Map availableIcons object to be used for the knobs addon
 const typeOptions = iconSets.reduce((accumulator, iconSet) => {
   accumulator[availableIcons[iconSet].type] = iconSet;
@@ -35,12 +38,12 @@ const typeOptions = iconSets.reduce((accumulator, iconSet) => {
 }, {});
 
 // Generate the stories
-storiesOf('Icon', module)
-  .add('with dynamic variables', () => (
+storiesOf('Generic|Icons', module)
+  .add('Default', () => (
     <Icon
       type={select('type', typeOptions, selectedIconSet)}
       icon={text('icon', selectedIcon)}
       size={number('size', 2)}
-      color={text('color', '#333333')}
+      color={text('color', color)}
     />
   ));
