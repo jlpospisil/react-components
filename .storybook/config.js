@@ -8,6 +8,7 @@ setOptions({
   name: 'React Components',
   sortStoriesByKind: true,
   addonPanelInRight: true,
+  selectedAddonPanel: 'storybooks/storybook-addon-knobs',
 });
 
 // Global decorators
