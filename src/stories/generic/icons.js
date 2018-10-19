@@ -22,8 +22,14 @@ const availableIcons = {
 // Display available icons the the action logger pane
 action('Available Icons')(availableIcons);
 
+// Select random Icon
+const iconSets = Object.keys(availableIcons);
+const selectedIconSet = iconSets[Math.floor(Math.random() * iconSets.length)];
+const selectedIconSetIcons = availableIcons[selectedIconSet].icons;
+const selectedIcon = selectedIconSetIcons[Math.floor(Math.random() * selectedIconSetIcons.length)];
+
 // Map availableIcons object to be used for the knobs addon
-const typeOptions = Object.keys(availableIcons).reduce((accumulator, iconSet) => {
+const typeOptions = iconSets.reduce((accumulator, iconSet) => {
   accumulator[availableIcons[iconSet].type] = iconSet;
   return accumulator;
 }, {});
@@ -32,8 +38,8 @@ const typeOptions = Object.keys(availableIcons).reduce((accumulator, iconSet) =>
 storiesOf('Icon', module)
   .add('with dynamic variables', () => (
     <Icon
-      type={select('type', typeOptions, 'FontAwesome')}
-      icon={text('icon', 'FaBeer')}
+      type={select('type', typeOptions, selectedIconSet)}
+      icon={text('icon', selectedIcon)}
       size={number('size', 1)}
       color={text('color', '#333333')}
     />
