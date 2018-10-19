@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { IconContext } from "react-icons";
 import * as FA from 'react-icons/fa';
 import * as MD from 'react-icons/md';
@@ -10,7 +11,7 @@ import * as Feather from 'react-icons/fi';
 class Icon extends React.Component {
 
   render() {
-    const { type, icon, ...props } = this.props;
+    const { type, icon, size, ...props } = this.props;
     let IconSet = FA;
 
     switch (type.toLowerCase()) {
@@ -42,7 +43,7 @@ class Icon extends React.Component {
 
     if (Icon) {
       return (
-        <IconContext.Provider value={props}>
+        <IconContext.Provider value={{ size: `${size}em`, ...props }}>
           <Icon />
         </IconContext.Provider>
       );
@@ -52,9 +53,14 @@ class Icon extends React.Component {
   }
 }
 
+// Define prop types
+Icon.propTypes = {
+  size: PropTypes.number,
+};
+
 // Set default props
 Icon.defaultProps = {
-  type: 'fontawesome',
+  type: null,
 };
 
 export default Icon;

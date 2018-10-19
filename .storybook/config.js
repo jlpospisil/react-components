@@ -1,11 +1,15 @@
-import { configure } from '@storybook/react';
+import { configure, addDecorator } from '@storybook/react';
 import { setOptions } from '@storybook/addon-options';
+import { withKnobs } from '@storybook/addon-knobs/react';
 
 // Storybook options
 setOptions({
   name: 'React Components',
   sortStoriesByKind: true,
 });
+
+// Global decorators
+addDecorator(withKnobs);
 
 // Load stories
 const loadStories = () => {
