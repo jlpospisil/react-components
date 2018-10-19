@@ -10,12 +10,14 @@
   "author": "Josh Pospisil",
   "license": "MIT",
   "devDependencies": {
+    "@storybook/addon-actions": "^3.4.11",
     "@storybook/addon-options": "^3.4.11",
     "@storybook/react": "^3.4.11",
     "babel-core": "^6.26.3"
   },
   "dependencies": {
     "react": "^16.5.2",
-    "react-dom": "^16.5.2"
+    "react-dom": "^16.5.2",
+    "react-icons": "^3.2.1"
   }
 }
