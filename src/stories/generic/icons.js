@@ -40,7 +40,7 @@ storiesOf('Icon', module)
     <Icon
       type={select('type', typeOptions, selectedIconSet)}
       icon={text('icon', selectedIcon)}
-      size={number('size', 1)}
+      size={number('size', 2)}
       color={text('color', '#333333')}
     />
   ));

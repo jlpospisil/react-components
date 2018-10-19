@@ -8,38 +8,45 @@ import * as Typicons from 'react-icons/ti'
 import * as GO from 'react-icons/go';
 import * as Feather from 'react-icons/fi';
 
+// Get the requested icon if it exists
+const getIcon = ({ type, icon }) => {
+  let IconSet = FA;
+
+  switch (type.toLowerCase()) {
+    case 'material-design':
+    case 'materialdesign':
+    case 'md':
+      IconSet = MD;
+      break;
+
+    case 'ion':
+    case 'ionicons':
+      IconSet = Ion;
+      break;
+
+    case 'typicons':
+      IconSet = Typicons;
+      break;
+
+    case 'go':
+      IconSet = GO;
+      break;
+
+    case 'feather':
+      IconSet = Feather;
+      break;
+  }
+
+  return IconSet[icon];
+};
+
+// Create the react component
 class Icon extends React.Component {
 
   render() {
     const { type, icon, size, ...props } = this.props;
-    let IconSet = FA;
 
-    switch (type.toLowerCase()) {
-      case 'material-design':
-      case 'materialdesign':
-      case 'md':
-        IconSet = MD;
-        break;
-
-      case 'ion':
-      case 'ionicons':
-        IconSet = Ion;
-        break;
-
-      case 'typicons':
-        IconSet = Typicons;
-        break;
-
-      case 'go':
-        IconSet = GO;
-        break;
-
-      case 'feather':
-        IconSet = Feather;
-        break;
-    }
-
-    const Icon = IconSet[icon];
+    const Icon = getIcon({ type, icon });
 
     if (Icon) {
       return (
@@ -55,12 +62,14 @@ class Icon extends React.Component {
 
 // Define prop types
 Icon.propTypes = {
+  type: PropTypes.string,
   size: PropTypes.number,
 };
 
 // Set default props
 Icon.defaultProps = {
-  type: null,
+  type: 'FontAwesome',
+  size: 1
 };
 
 export default Icon;
