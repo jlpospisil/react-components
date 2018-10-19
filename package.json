@@ -1,0 +1,21 @@
+{
+  "name": "react-components",
+  "version": "0.0.1",
+  "description": "Reusable react components",
+  "main": "index.js",
+  "scripts": {
+    "storybook": "start-storybook -p 9001 -c .storybook",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Josh Pospisil",
+  "license": "MIT",
+  "devDependencies": {
+    "@storybook/addon-options": "^3.4.11",
+    "@storybook/react": "^3.4.11",
+    "babel-core": "^6.26.3"
+  },
+  "dependencies": {
+    "react": "^16.5.2",
+    "react-dom": "^16.5.2"
+  }
+}
