@@ -1,7 +1,7 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { text, select, number } from '@storybook/addon-knobs/react';
-import { action, configureActions } from '@storybook/addon-actions';
+import { action } from '@storybook/addon-actions';
 import * as FA from 'react-icons/fa';
 import * as MD from 'react-icons/md';
 import * as Ion from 'react-icons/io';
