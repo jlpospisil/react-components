@@ -22,31 +22,34 @@ const availableIcons = {
 // Display available icons the the action logger pane
 action('Available Icons')(availableIcons);
 
-// Select random Icon
-const iconSets = Object.keys(availableIcons);
-let selectedIconSet = iconSets[Math.floor(Math.random() * iconSets.length)];
-const selectedIconSetIcons = availableIcons[selectedIconSet].icons;
-const selectedIcon = selectedIconSetIcons[Math.floor(Math.random() * selectedIconSetIcons.length)];
-selectedIconSet = availableIcons[selectedIconSet].type;
-
-console.log( { selectedIconSet, selectedIcon });
-
 // Generate random hex color
 const color = `#${Math.floor(Math.random() * 16777215).toString(16)}`;
 
-// Map availableIcons object to be used for the knobs addon
-const typeOptions = iconSets.reduce((accumulator, iconSet) => {
-  accumulator[availableIcons[iconSet].type] = iconSet;
-  return accumulator;
-}, {});
+// Select random Icon
+const iconSets = Object.keys(availableIcons);
+
+// Generate list of all icons to be used for the knobs addon
+const allIconOptions = iconSets.map(iconSetName => {
+  const iconSet = availableIcons[iconSetName];
+  return iconSet.icons.map(icon => `${iconSet.type} - ${icon}`)
+})
+.flat();
 
 // Generate the stories
 storiesOf('Generic|Icons', module)
-  .add('Default', () => (
-    <Icon
-      type={select('type', typeOptions, selectedIconSet)}
-      icon={text('icon', selectedIcon)}
-      size={number('size', 2)}
-      color={text('color', color)}
-    />
-  ));
+  .add('Default', () => {
+    let selectedIcon = select('icon', allIconOptions, selectedIcon);
+    if (!selectedIcon) {
+      selectedIcon = allIconOptions[Math.floor(Math.random() * allIconOptions.length)];
+    }
+    const [type, icon] = selectedIcon.split(' - ');
+
+    return (
+      <Icon
+        type={type}
+        icon={icon}
+        size={number('size', 2)}
+        color={text('color', color)}
+      />
+    );
+  });
