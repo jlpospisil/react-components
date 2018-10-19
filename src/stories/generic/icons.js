@@ -24,9 +24,12 @@ action('Available Icons')(availableIcons);
 
 // Select random Icon
 const iconSets = Object.keys(availableIcons);
-const selectedIconSet = iconSets[Math.floor(Math.random() * iconSets.length)];
+let selectedIconSet = iconSets[Math.floor(Math.random() * iconSets.length)];
 const selectedIconSetIcons = availableIcons[selectedIconSet].icons;
 const selectedIcon = selectedIconSetIcons[Math.floor(Math.random() * selectedIconSetIcons.length)];
+selectedIconSet = availableIcons[selectedIconSet].type;
+
+console.log( { selectedIconSet, selectedIcon });
 
 // Generate random hex color
 const color = `#${Math.floor(Math.random() * 16777215).toString(16)}`;
