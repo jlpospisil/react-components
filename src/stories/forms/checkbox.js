@@ -13,6 +13,9 @@ storiesOf('Forms|CheckBoxes', module)
         disabled={boolean('Disabled', false)}
         size={number('size', 2)}
         color={text('color')}
+        onClick={() => {
+          action('CheckBox Clicked')('Typically you would adjust the checked property here.');
+        }}
       />
     );
   });
