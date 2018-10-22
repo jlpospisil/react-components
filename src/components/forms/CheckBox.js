@@ -15,7 +15,7 @@ const CheckBox = ({ checked, disabled, label, style, onClick, ...props }) => {
     size: typeof label === 'string' ? props.size : label.size || 1,
     color: typeof label === 'string' ? null : label.color,
   };
-console.log(checkBoxLabel);
+
   // Adjust opacity if the checkbox is disabled
   let opacity = style && style.opacity ? style.opacity : 1;
   if (disabled) {
