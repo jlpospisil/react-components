@@ -34,7 +34,7 @@ console.log(checkBoxLabel);
 
   // Create the check box component
   return (
-    <span onClick={clickHandler} style={{ display: 'inline-flex', alignItems: 'center' }}>
+    <span onClick={clickHandler} style={{ display: 'inline-flex', alignItems: 'center', cursor: 'default' }}>
       { checked && <Icon type="MaterialDesign" icon="MdCheckBox" {...iconProps} /> }
       { !checked && <Icon type="MaterialDesign" icon="MdCheckBoxOutlineBlank" {...iconProps} /> }
       { checkBoxLabel.text && <span style={{ marginLeft: '5px', fontSize: `${checkBoxLabel.size}em`, opacity, color: checkBoxLabel.color }}>{ checkBoxLabel.text }</span> }
