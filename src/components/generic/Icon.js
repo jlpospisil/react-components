@@ -62,8 +62,14 @@ class Icon extends React.Component {
 
 // Define prop types
 Icon.propTypes = {
+  /** name of the icon suite */
   type: PropTypes.string,
+  /** name of the icon (see notes for list) */
+  icon: PropTypes.string,
+  /** size (in em) of the icon */
   size: PropTypes.number,
+  /** color of the icon */
+  color: PropTypes.string,
 };
 
 // Set default props

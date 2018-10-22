@@ -2,6 +2,7 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { text, select, number } from '@storybook/addon-knobs/react';
 import { action } from '@storybook/addon-actions';
+import { withMarkdownNotes } from '@storybook/addon-notes';
 import * as FA from 'react-icons/fa';
 import * as MD from 'react-icons/md';
 import * as Ion from 'react-icons/io';
@@ -11,17 +12,13 @@ import * as Feather from 'react-icons/fi';
 import { Icon } from '../../components/generic';
 
 const availableIcons = {
-  Feather: { type: 'Feather', icons: Object.keys(Feather) },
-  FontAwesome: { type: 'FontAwesome', icons: Object.keys(FA) },
-  'Github Octicons': { type: 'GO', icons: Object.keys(GO) },
-  Ionicons: { type: 'Ionicons', icons: Object.keys(Ion) },
-  MaterialDesign: { type: 'MaterialDesign', icons: Object.keys(MD) },
-  TypIcons: { type: 'TypIcons', icons: Object.keys(Typicons) },
+  Feather: { type: 'Feather', icons: Object.keys(Feather).sort() },
+  FontAwesome: { type: 'FontAwesome', icons: Object.keys(FA).sort() },
+  'Github Octicons': { type: 'GO', icons: Object.keys(GO).sort() },
+  Ionicons: { type: 'Ionicons', icons: Object.keys(Ion).sort() },
+  MaterialDesign: { type: 'MaterialDesign', icons: Object.keys(MD).sort() },
+  TypIcons: { type: 'TypIcons', icons: Object.keys(Typicons).sort() },
 };
-
-// Display available icons the the action logger pane
-action('Available Icons')('http://react-icons.github.io/react-icons/');
-action('Available Icons')(availableIcons);
 
 // Select random Icon
 const iconSets = Object.keys(availableIcons);
@@ -33,9 +30,20 @@ const allIconOptions = iconSets.map(iconSetName => {
 })
 .flat();
 
+// Add not to show all available icons
+const notes = `
+## Uses react-icons
+### http://react-icons.github.io/react-icons/
+\`\`\`javascript
+${JSON.stringify(availableIcons, null, 2)}
+\`\`\`
+`;
+
 // Generate the stories
 storiesOf('Generic|Icons', module)
-  .add('Default', () => {
+  .add('Default',
+    withMarkdownNotes(notes)(
+    () => {
     let selectedIcon = select('icon', allIconOptions, selectedIcon);
     if (!selectedIcon) {
       selectedIcon = allIconOptions[Math.floor(Math.random() * allIconOptions.length)];
@@ -50,4 +58,4 @@ storiesOf('Generic|Icons', module)
         color={text('color')}
       />
     );
-  });
+  }));

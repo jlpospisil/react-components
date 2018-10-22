@@ -34,11 +34,21 @@ const CheckBox = ({ checked, disabled, style, onClick, ...props }) => {
 
 // Define prop types
 CheckBox.propTypes = {
+  checked: PropTypes.bool,
+  disabled: PropTypes.bool,
+  /** size (in em) of the check box */
+  size: PropTypes.number,
+  /** color of the check box */
+  color: PropTypes.string,
+  /** callback function to run when checkbox is clicked */
   onClick: PropTypes.func
 };
 
 // Set default props
 CheckBox.defaultProps = {
+  checked: false,
+  disabled: false,
+  size: 1,
   onClick: () => {}
 };
 
