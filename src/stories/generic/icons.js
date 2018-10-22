@@ -20,10 +20,8 @@ const availableIcons = {
 };
 
 // Display available icons the the action logger pane
+action('Available Icons')('http://react-icons.github.io/react-icons/');
 action('Available Icons')(availableIcons);
-
-// Generate random hex color
-const color = `#${Math.floor(Math.random() * 16777215).toString(16)}`;
 
 // Select random Icon
 const iconSets = Object.keys(availableIcons);
@@ -49,7 +47,7 @@ storiesOf('Generic|Icons', module)
         type={type}
         icon={icon}
         size={number('size', 2)}
-        color={text('color', color)}
+        color={text('color')}
       />
     );
   });
