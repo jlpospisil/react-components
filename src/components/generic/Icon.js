@@ -1,10 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { IconContext } from "react-icons";
+import { IconContext } from 'react-icons';
 import * as FA from 'react-icons/fa';
 import * as MD from 'react-icons/md';
 import * as Ion from 'react-icons/io';
-import * as Typicons from 'react-icons/ti'
+import * as Typicons from 'react-icons/ti';
 import * as GO from 'react-icons/go';
 import * as Feather from 'react-icons/fi';
 
@@ -13,28 +13,28 @@ const getIcon = ({ type, icon }) => {
   let IconSet = FA;
 
   switch (type.toLowerCase()) {
-    case 'material-design':
-    case 'materialdesign':
-    case 'md':
-      IconSet = MD;
-      break;
+      case 'material-design':
+      case 'materialdesign':
+      case 'md':
+        IconSet = MD;
+        break;
 
-    case 'ion':
-    case 'ionicons':
-      IconSet = Ion;
-      break;
+      case 'ion':
+      case 'ionicons':
+        IconSet = Ion;
+        break;
 
-    case 'typicons':
-      IconSet = Typicons;
-      break;
+      case 'typicons':
+        IconSet = Typicons;
+        break;
 
-    case 'go':
-      IconSet = GO;
-      break;
+      case 'go':
+        IconSet = GO;
+        break;
 
-    case 'feather':
-      IconSet = Feather;
-      break;
+      case 'feather':
+        IconSet = Feather;
+        break;
   }
 
   return IconSet[icon];
@@ -42,9 +42,10 @@ const getIcon = ({ type, icon }) => {
 
 // Create the react component
 class Icon extends React.Component {
-
   render() {
-    const { type, icon, size, ...props } = this.props;
+    const {
+      type, icon, size, ...props
+    } = this.props;
 
     const Icon = getIcon({ type, icon });
 
@@ -75,7 +76,7 @@ Icon.propTypes = {
 // Set default props
 Icon.defaultProps = {
   type: 'FontAwesome',
-  size: 1
+  size: 1,
 };
 
 export default Icon;

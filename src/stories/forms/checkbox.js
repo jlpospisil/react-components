@@ -6,8 +6,7 @@ import { CheckBox } from '../../components/forms';
 
 // Generate the stories
 storiesOf('Forms|CheckBoxes', module)
-.add('default', () => {
-  return (
+  .add('default', () => (
     <CheckBox
       checked={boolean('Checked', false)}
       disabled={boolean('Disabled', false)}
@@ -17,10 +16,8 @@ storiesOf('Forms|CheckBoxes', module)
         action('CheckBox Clicked')('Typically you would adjust the checked property here.');
       }}
     />
-  );
-})
-.add('with label', () => {
-  return (
+  ))
+  .add('with label', () => (
     <CheckBox
       checked={boolean('Checked', false)}
       disabled={boolean('Disabled', false)}
@@ -35,5 +32,4 @@ storiesOf('Forms|CheckBoxes', module)
         action('CheckBox Clicked')('Typically you would adjust the checked property here.');
       }}
     />
-  );
-});
+  ));

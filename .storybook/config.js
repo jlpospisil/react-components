@@ -14,9 +14,7 @@ setOptions({
 });
 
 // Global decorators
-addDecorator((getStory, context) => {
-  return withInfo({ inline: true })(getStory)(context);
-});
+addDecorator((getStory, context) => withInfo({ inline: true })(getStory)(context));
 addDecorator(withKnobs);
 
 // Load stories

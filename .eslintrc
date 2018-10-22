@@ -1,0 +1,26 @@
+{
+  "env": {
+    "browser": true,
+    "es6": true,
+    "node": true
+  },
+  "parser": "babel-eslint",
+  "plugins": [
+    "react"
+  ],
+  "extends": [
+    "airbnb-base",
+    "eslint:recommended",
+    "plugin:react/recommended"
+  ],
+  "settings": {
+    "react": {
+      "version": "16.0"
+    }
+  },
+  "rules": {
+    "no-plusplus": "off",
+    "indent": ["error", 2, {"SwitchCase": 2}],
+    "import/no-extraneous-dependencies": ["error", {"devDependencies": true}]
+  }
+}
