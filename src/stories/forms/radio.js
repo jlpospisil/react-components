@@ -4,26 +4,18 @@ import { boolean, number, text, select } from '@storybook/addon-knobs/react';
 import { action } from '@storybook/addon-actions';
 import { Radio } from '../../components/forms';
 
-const radioOptions = [
-  { text: 'Option 1', size: 1, color: null },
-  { text: 'Option 2', size: 1, color: null },
-  { text: 'Option 3', size: 1, color: null },
-];
-
-const selectedOptions = radioOptions.reduce((aggrigator, option) => {
-  aggrigator[option.text] = option;
-  return aggrigator;
-}, { 'None Selected': null });
+const radioOptions = ['Option1', 'Option2', 'Option3', 'Option4'];
 
 // Generate the stories
 storiesOf('Forms|Radios', module)
   .add('default', () => (
     <Radio
-      disabled={boolean('Disabled', false)}
+      disabled={boolean('disabled', false)}
+      inline={boolean('inline', true)}
       size={number('size', 2)}
       color={text('color')}
       options={radioOptions}
-      // selected={select('selected', selectedOptions)}   // Objects are causing errors
+      selected={select('selected',[null, ...radioOptions])}
       onClick={(newVal) => {
         action('Radio Clicked')(newVal);
       }}

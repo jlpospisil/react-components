@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { Icon } from '../generic';
 
 const Radio = ({
-  options, selected, disabled, onClick, style, ...props
+  options, selected, disabled, inline, onClick, style, ...props
 }) => {
   const clickHandler = (option) => {
     if (!disabled && typeof onClick === 'function') {
@@ -28,14 +28,15 @@ const Radio = ({
   };
 
   const itemStyle = {
-    display: 'inline-flex',
+    display: inline ? 'inline-flex' : 'flex',
     alignItems: 'center',
-    cursor: 'default'
+    cursor: 'default',
+    marginLeft: inline ? '1em' : 0
   };
 
   // Create the check box component
   return (
-    <span>
+    <span style={{display: 'inline-block'}}>
       {
         options.map((option, optionIndex) => {
           const label = {
@@ -67,6 +68,8 @@ Radio.propTypes = {
     PropTypes.string,
     PropTypes.object,
   ]),
+  /** display the options inline instead of stacked */
+  inline: PropTypes.bool,
   disabled: PropTypes.bool,
   /** size (in em) of the check box */
   size: PropTypes.number,
@@ -77,6 +80,7 @@ Radio.propTypes = {
 // Set default props
 Radio.defaultProps = {
   disabled: false,
+  inline: false,
   onClick: () => {},
 };
 
