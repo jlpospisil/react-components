@@ -31,7 +31,6 @@ const Radio = ({
     display: inline ? 'inline-flex' : 'flex',
     alignItems: 'center',
     cursor: 'default',
-    marginLeft: inline ? '1em' : 0
   };
 
   // Create the check box component
@@ -46,7 +45,7 @@ const Radio = ({
           };
 
           return (
-            <span style={itemStyle} key={optionIndex} onClick={() => clickHandler(option)}>
+            <span style={{ ...itemStyle, marginLeft: optionIndex ? '1em' : null }} key={optionIndex} onClick={() => clickHandler(option)}>
               <Icon type="MaterialDesign" icon={selected === option ? 'MdRadioButtonChecked' : 'MdRadioButtonUnchecked'} {...iconProps} />
               { label.text && <span style={{ marginLeft: '5px', fontSize: `${label.size}em`, opacity, color: label.color }}>
                 { label.text }
