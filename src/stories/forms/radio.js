@@ -8,16 +8,37 @@ const radioOptions = ['Option1', 'Option2', 'Option3', 'Option4'];
 
 // Generate the stories
 storiesOf('Forms|Radios', module)
-  .add('default', () => (
-    <Radio
-      disabled={boolean('disabled', false)}
-      inline={boolean('inline', true)}
-      size={number('size', 2)}
-      color={text('color')}
-      options={radioOptions}
-      selected={select('selected',[null, ...radioOptions])}
+  .add('default', () => {
+    // props
+    const disabled = boolean('disabled', false);
+    const inline = boolean('inline', true);
+    const size = number('size');
+    const color = text('color');
+
+    // label props
+    const labelSize = number('label size');
+    const labelColor = text('label color');
+    const options = radioOptions.map(option => {
+      return {
+        text: option,
+        size: labelSize,
+        color: labelColor,
+      }
+    });
+
+    // get selected option
+    let selectedOption = select('selected',[null, ...radioOptions]);
+    selectedOption = options.find(option => option.text === selectedOption);
+
+    return (<Radio
+      disabled={disabled}
+      inline={inline}
+      size={size}
+      color={color}
+      options={options}
+      selected={selectedOption}
       onClick={(newVal) => {
         action('Radio Clicked')(newVal);
       }}
-    />
-  ));
+    />);
+});

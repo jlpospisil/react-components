@@ -41,7 +41,7 @@ const Radio = ({
         options.map((option, optionIndex) => {
           const label = {
             text: typeof option === 'string' ? option : option.text,
-            size: typeof option === 'string' ? props.size : option.size || 1,
+            size: typeof option === 'string' ? props.size : option.size,
             color: typeof option === 'string' ? null : option.color,
           };
 
@@ -81,6 +81,7 @@ Radio.propTypes = {
 Radio.defaultProps = {
   disabled: false,
   inline: false,
+  size: 1.5,
   onClick: () => {},
 };
 
