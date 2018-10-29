@@ -7,7 +7,7 @@ import { Radio } from '../../components/forms';
 const radioOptions = ['Option1', 'Option2', 'Option3', 'Option4'];
 
 // Generate the stories
-storiesOf('Forms|Inputs', module)
+storiesOf('Components|Form', module)
   .add('Radios', () => {
     // props
     const disabled = boolean('disabled', false);

@@ -39,7 +39,7 @@ ${JSON.stringify(availableIcons, null, 2)}
 `;
 
 // Generate the stories
-storiesOf('Generic|Components', module)
+storiesOf('Components|Generic', module)
   .add('Icons',
     withMarkdownNotes(notes)(
       () => {

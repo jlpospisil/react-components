@@ -5,8 +5,8 @@ import { action } from '@storybook/addon-actions';
 import { CheckBox } from '../../components/forms';
 
 // Generate the stories
-storiesOf('Forms|Inputs', module)
-  .add('Check Boxes', () => (
+storiesOf('Components|Form', module)
+  .add('Check Box', () => (
     <CheckBox
       checked={boolean('Checked', false)}
       disabled={boolean('Disabled', false)}
