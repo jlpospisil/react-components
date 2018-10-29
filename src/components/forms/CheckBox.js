@@ -67,8 +67,12 @@ CheckBox.propTypes = {
 CheckBox.defaultProps = {
   checked: false,
   disabled: false,
-  size: 1,
-  label: {},
+  size: 1.5,
+  label: {
+    text: null,
+    size: 1,
+    color: null
+  },
   onClick: () => {},
 };
 

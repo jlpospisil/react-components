@@ -10,7 +10,7 @@ storiesOf('Forms|CheckBoxes', module)
     <CheckBox
       checked={boolean('Checked', false)}
       disabled={boolean('Disabled', false)}
-      size={number('size', 2)}
+      size={number('size')}
       color={text('color')}
       onClick={() => {
         action('CheckBox Clicked')('Typically you would adjust the checked property here.');
@@ -21,7 +21,7 @@ storiesOf('Forms|CheckBoxes', module)
     <CheckBox
       checked={boolean('Checked', false)}
       disabled={boolean('Disabled', false)}
-      size={number('size', 2)}
+      size={number('size')}
       color={text('color')}
       label={{
         text: text('label text', 'Check box label'),
