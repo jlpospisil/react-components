@@ -5,19 +5,8 @@ import { action } from '@storybook/addon-actions';
 import { CheckBox } from '../../components/forms';
 
 // Generate the stories
-storiesOf('Forms|CheckBoxes', module)
-  .add('default', () => (
-    <CheckBox
-      checked={boolean('Checked', false)}
-      disabled={boolean('Disabled', false)}
-      size={number('size')}
-      color={text('color')}
-      onClick={() => {
-        action('CheckBox Clicked')('Typically you would adjust the checked property here.');
-      }}
-    />
-  ))
-  .add('with label', () => (
+storiesOf('Forms|Inputs', module)
+  .add('Check Boxes', () => (
     <CheckBox
       checked={boolean('Checked', false)}
       disabled={boolean('Disabled', false)}

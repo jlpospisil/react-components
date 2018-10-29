@@ -39,8 +39,8 @@ ${JSON.stringify(availableIcons, null, 2)}
 `;
 
 // Generate the stories
-storiesOf('Generic|Icons', module)
-  .add('default',
+storiesOf('Generic|Components', module)
+  .add('Icons',
     withMarkdownNotes(notes)(
       () => {
         let selectedIcon = select('icon', allIconOptions, selectedIcon);
