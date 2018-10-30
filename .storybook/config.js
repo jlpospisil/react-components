@@ -2,6 +2,7 @@ import { configure, addDecorator } from '@storybook/react';
 import { setOptions } from '@storybook/addon-options';
 import { withInfo } from '@storybook/addon-info';
 import { withKnobs } from '@storybook/addon-knobs/react';
+import createTheme from './create-theme';
 
 // Storybook options
 setOptions({
@@ -11,26 +12,10 @@ setOptions({
   selectedAddonPanel: 'storybooks/storybook-addon-knobs',
   hierarchySeparator: /\//,
   hierarchyRootSeparator: /\|/,
-  // theme: {
-  //   mainBackground: 'red',
-  //   mainBorder: 'red',
-  //   mainBorderColor: 'red',
-  //   mainBorderRadius: 'red',
-  //   mainFill: 'red',
-  //   barFill: 'red',
-  //   inputFill: 'red',
-  //   mainTextFace: 'red',
-  //   mainTextColor: 'red',
-  //   mainTextSize: 'red',
-  //   dimmedTextColor: 'red',
-  //   highlightColor: 'red',
-  //   successColor: 'red',
-  //   failColor: 'red',
-  //   warnColor: 'red',
-  //   monoTextFace: 'red',
-  //   layoutMargin: 'red',
-  //   overlayBackground: 'red',
-  // }
+  theme: createTheme({
+    mainBackground: '#e0e0e0',
+    inputFill: '#EEEEEE',
+  }),
 });
 
 // Global decorators
