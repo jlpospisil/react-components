@@ -38,7 +38,7 @@ storiesOf('Components|Form', module)
       options={options}
       selected={selectedOption}
       onClick={(newVal) => {
-        action('Radio Clicked')(newVal);
+        action('Radio Clicked')(newVal.text);
       }}
     />);
 });
