@@ -11,6 +11,26 @@ setOptions({
   selectedAddonPanel: 'storybooks/storybook-addon-knobs',
   hierarchySeparator: /\//,
   hierarchyRootSeparator: /\|/,
+  // theme: {
+  //   mainBackground: 'red',
+  //   mainBorder: 'red',
+  //   mainBorderColor: 'red',
+  //   mainBorderRadius: 'red',
+  //   mainFill: 'red',
+  //   barFill: 'red',
+  //   inputFill: 'red',
+  //   mainTextFace: 'red',
+  //   mainTextColor: 'red',
+  //   mainTextSize: 'red',
+  //   dimmedTextColor: 'red',
+  //   highlightColor: 'red',
+  //   successColor: 'red',
+  //   failColor: 'red',
+  //   warnColor: 'red',
+  //   monoTextFace: 'red',
+  //   layoutMargin: 'red',
+  //   overlayBackground: 'red',
+  // }
 });
 
 // Global decorators
