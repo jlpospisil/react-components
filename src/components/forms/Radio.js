@@ -72,6 +72,8 @@ Radio.propTypes = {
   disabled: PropTypes.bool,
   /** size (in em) of the check box */
   size: PropTypes.number,
+  /** additional style to apply to container **/
+  style: PropTypes.object,
   /** callback function to run when checkbox is clicked */
   onClick: PropTypes.func,
 };

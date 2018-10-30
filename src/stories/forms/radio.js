@@ -41,4 +41,4 @@ storiesOf('Components|Form', module)
         action('Radio Clicked')(newVal.text);
       }}
     />);
-});
+  });
