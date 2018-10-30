@@ -14,7 +14,7 @@ setOptions({
   hierarchyRootSeparator: /\|/,
   theme: createTheme({
     mainBackground: '#e0e0e0',
-    inputFill: '#EEEEEE',
+    inputFill: '#eeeeee',
   }),
 });
 
