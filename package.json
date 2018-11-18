@@ -1,5 +1,5 @@
 {
-  "name": "react-components",
+  "name": "@cdpjs/react-components",
   "version": "0.1.0",
   "description": "Reusable react components",
   "main": "index.js",
